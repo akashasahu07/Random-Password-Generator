@@ -12,25 +12,30 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #d4d4d4;
+    background-image: url(images/bg.jpg);
+    background-size: cover;
 }
 
 .container {
     width: 100%;
     max-width: 500px;
-    border-radius: 5px;
-    background-color: #fff;
+    border-radius: 15px;
+    background-color: #2c2c2c; /* Dark transparent background */
     padding: 40px 30px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px #fff;
+    backdrop-filter: blur(10px); /* This adds the blur */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
 .container h1 {
-    font-size: 24px;   
+    font-size: 24px;
     font-weight: bold;
     margin-bottom: 36px;
     text-decoration: underline;
     text-align: center;
-    color: #333333;
+    color: #ffffff;
 }
 
 .inputBox {
@@ -94,13 +99,15 @@ input[type="checkbox"] {
     font-size: 16px;
     font-weight: bold;
     color: #fff;
-    background-color: #3162cb;
+    background-color: #0236a8;
     cursor: pointer;
     margin-top: 30px;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 0 5px #a89702;
 }
 
 .getBtn:hover {
-    background-color: #1d1e20;
+    background-color: #00246d;
 }
 
 #sliderValue {

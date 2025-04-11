@@ -24,7 +24,7 @@ generateBtn.addEventListener("click", () => {
 });
 
 function generatePassword() {
-    const lenght = inputSlider.value;
+    const length = inputSlider.value;
     let characters = "";
     let password = "";
 
@@ -33,13 +33,19 @@ function generatePassword() {
     characters += numberEl.checked ? numbers : "";
     characters += symbolsEl.checked ? symbols : "";
 
-    for (let i = 0; i < lenght; i++) {
-        password += characters.charAt(Math.floor(Math.random() * characters.length));
-        console.log(password);
+    // If no checkbox is selected, show an alert and stop
+    if (characters.length === 0) {
+        alert("Please select at least one character type (Lowercase, Uppercase, Numbers, or Symbols).");
+        return "";
     }
 
-    return password
+    for (let i = 0; i < length; i++) {
+        password += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+
+    return password;
 }
+
 
 copyIcon.addEventListener("click", () => {
     if (passBox.value != "" || passBox.value.lenght >= 10) {
@@ -47,7 +53,7 @@ copyIcon.addEventListener("click", () => {
         copyIcon.innerHTML = "check";
 
         setTimeout(() => {
-            copyIcon.innerHTML="content_copy";
+            copyIcon.innerHTML = "content_copy";
         }, 3000);
     }
 });
